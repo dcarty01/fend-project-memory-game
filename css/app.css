@@ -81,6 +81,11 @@ h1 {
     font-size: 33px;
 }
 
+.deck .card.disabled {
+    pointer-events: none;
+    opacity: 0.9;
+}
+
 /*
  * Styles for the Score Panel
  */
@@ -106,4 +111,84 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+.score-panel .timer {
+    margin-left: 50px;
+}
+
+/*
+ * Modal
+ */
+
+#modal {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 25px;
+    border: 2px solid #888;
+    border-radius: 10px;
+    width: 80%;
+    height: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*
+ * Media Queries
+ */
+
+@media screen and (max-width: 700px) {
+    .deck {
+        max-width: 95%;
+        height: auto;
+        padding: 14px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .deck .card {
+        width: 23%;
+        min-height: 74px !important;
+        display: flex;
+        justify-content: space-around;
+        margin: 3px;
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .deck .card {
+        margin: 2px;
+    }
+
+    .score-panel .timer {
+        margin-left: 5px;
+    }
+
+    .score-panel {
+        text-align: center;
+        width: 260px;
+    }
+    
+    .score-panel .restart {
+        margin-left: 0;
+    }
 }
